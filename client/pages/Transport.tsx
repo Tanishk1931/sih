@@ -15,7 +15,11 @@ export default function Transport() {
           { name: "Homestays", link: "#" },
           { name: "Restaurants", link: "#" },
         ].map((s) => (
-          <a key={s.name} href={s.link} className="rounded-lg border border-border bg-white p-4 text-sm font-semibold shadow hover:bg-accent">
+          <a
+            key={s.name}
+            href={s.link}
+            className="rounded-lg border border-border bg-white p-4 text-sm font-semibold shadow hover:bg-accent"
+          >
             {s.name}
           </a>
         ))}

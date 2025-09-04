@@ -29,13 +29,20 @@ export default function VirtualTours() {
       </div>
       <div className="grid gap-4 md:grid-cols-3">
         {Array.from({ length: 6 }).map((_, i) => (
-          <div key={i} className="overflow-hidden rounded-lg border border-border bg-white shadow">
+          <div
+            key={i}
+            className="overflow-hidden rounded-lg border border-border bg-white shadow"
+          >
             <div className="relative h-40 bg-[linear-gradient(135deg,rgba(239,68,68,0.2),rgba(234,179,8,0.2))]">
-              <div className="absolute inset-0 grid place-items-center text-6xl">🧭</div>
+              <div className="absolute inset-0 grid place-items-center text-6xl">
+                🧭
+              </div>
             </div>
             <div className="p-4 text-sm">
               <p className="font-semibold">Monastery Tour #{i + 1}</p>
-              <p className="mt-1 text-muted-foreground">360° panoramic placeholder ��� Narration: {lang}</p>
+              <p className="mt-1 text-muted-foreground">
+                360° panoramic placeholder ��� Narration: {lang}
+              </p>
             </div>
           </div>
         ))}

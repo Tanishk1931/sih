@@ -13,7 +13,10 @@ export default function Calendar() {
     >
       <div className="grid gap-4 md:grid-cols-3">
         {events.map((e) => (
-          <div key={e.title} className="flex items-center gap-4 rounded-lg border border-border bg-white p-4 shadow">
+          <div
+            key={e.title}
+            className="flex items-center gap-4 rounded-lg border border-border bg-white p-4 shadow"
+          >
             <div className="grid h-14 w-14 place-items-center rounded-md bg-black text-yellow-400">
               <span className="text-sm font-extrabold">{e.date}</span>
             </div>
@@ -22,7 +25,9 @@ export default function Calendar() {
               <p className="text-muted-foreground">{e.place}</p>
             </div>
             <div className="ml-auto">
-              <button className="rounded-md bg-primary px-3 py-1.5 text-xs font-semibold text-primary-foreground">Notify me</button>
+              <button className="rounded-md bg-primary px-3 py-1.5 text-xs font-semibold text-primary-foreground">
+                Notify me
+              </button>
             </div>
           </div>
         ))}

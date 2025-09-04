@@ -11,13 +11,20 @@ export default function Archives() {
           className="w-full rounded-md border border-border bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
           placeholder="Search archives (e.g., 'Pemayangtse murals')"
         />
-        <button className="rounded-md bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground">Search</button>
+        <button className="rounded-md bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground">
+          Search
+        </button>
       </div>
       <div className="grid gap-4 md:grid-cols-3">
         {Array.from({ length: 6 }).map((_, i) => (
-          <div key={i} className="rounded-lg border border-border bg-white p-4 text-sm shadow">
+          <div
+            key={i}
+            className="rounded-lg border border-border bg-white p-4 text-sm shadow"
+          >
             <p className="font-semibold">Archive Item #{i + 1}</p>
-            <p className="mt-1 text-muted-foreground">Category • Year • Monastery</p>
+            <p className="mt-1 text-muted-foreground">
+              Category • Year • Monastery
+            </p>
           </div>
         ))}
       </div>

@@ -1,9 +1,24 @@
 import { Link } from "react-router-dom";
 
 const quickLinks = [
-  { title: "Virtual Tours", to: "/virtual-tours", desc: "Immerse in 360° panoramas of Sikkim’s sacred spaces.", icon: "🎥" },
-  { title: "Monastery Map", to: "/map", desc: "Explore locations, routes, and nearby attractions.", icon: "🗺️" },
-  { title: "Cultural Calendar", to: "/calendar", desc: "Festivals, rituals, and monastery events.", icon: "📅" },
+  {
+    title: "Virtual Tours",
+    to: "/virtual-tours",
+    desc: "Immerse in 360° panoramas of Sikkim’s sacred spaces.",
+    icon: "🎥",
+  },
+  {
+    title: "Monastery Map",
+    to: "/map",
+    desc: "Explore locations, routes, and nearby attractions.",
+    icon: "🗺️",
+  },
+  {
+    title: "Cultural Calendar",
+    to: "/calendar",
+    desc: "Festivals, rituals, and monastery events.",
+    icon: "📅",
+  },
 ];
 
 const features = [
@@ -33,9 +48,13 @@ export default function Index() {
         <ul className="flex gap-6 text-white font-semibold">
           <li className="hover:text-yellow-400 cursor-pointer">Where to go</li>
           <li className="hover:text-yellow-400 cursor-pointer">Experiences</li>
-          <li className="hover:text-yellow-400 cursor-pointer">Plan your trip</li>
+          <li className="hover:text-yellow-400 cursor-pointer">
+            Plan your trip
+          </li>
           <li className="hover:text-yellow-400 cursor-pointer">Monasteries</li>
-          <li className="hover:text-yellow-400 cursor-pointer">Festival & Events</li>
+          <li className="hover:text-yellow-400 cursor-pointer">
+            Festival & Events
+          </li>
         </ul>
       </nav>
 
@@ -80,7 +99,9 @@ export default function Index() {
                   {q.icon}
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-foreground">{q.title}</h3>
+                  <h3 className="text-lg font-bold text-foreground">
+                    {q.title}
+                  </h3>
                   <p className="mt-1 text-sm text-muted-foreground">{q.desc}</p>
                 </div>
               </div>
