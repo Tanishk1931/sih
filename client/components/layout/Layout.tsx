@@ -101,7 +101,8 @@ function Nav() {
     setOpen(false);
   };
   return (
-    <nav className="sticky top-0 z-50 w-full bg-gradient-to-b from-red-900/70 to-transparent text-white backdrop-blur">
+    <nav className="sticky top-0 z-50 w-full text-white backdrop-blur relative bg-black/70">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(600px_160px_at_10%_0%,rgba(234,179,8,0.12),transparent),radial-gradient(600px_160px_at_90%_0%,rgba(239,68,68,0.18),transparent)]" />
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:py-4">
         <Link to="/" className="flex items-center gap-3">
           <div className="flex h-9 w-9 items-center justify-center rounded-md bg-black text-yellow-400 shadow-md ring-1 ring-yellow-400/60">
@@ -120,7 +121,7 @@ function Nav() {
               to={item.to}
               className={({ isActive }) =>
                 `rounded-md px-3 py-2 text-sm font-semibold transition-colors duration-200 ${
-                  isActive ? "text-yellow-300" : "hover:text-yellow-300"
+                  isActive ? "text-red-300" : "hover:text-yellow-300"
                 }`
               }
             >
@@ -155,7 +156,7 @@ function Nav() {
       {/* Mobile dropdown */}
       {open && (
         <div className="mx-auto max-w-7xl px-4 pb-4 md:hidden">
-          <div className="overflow-hidden rounded-xl bg-black/80 shadow-xl ring-1 ring-white/10">
+          <div className="overflow-hidden rounded-xl bg-black/85 shadow-xl ring-1 ring-red-500/20">
             <form onSubmit={onSearch} className="flex gap-2 px-4 py-3">
               <input
                 value={query}
@@ -165,7 +166,7 @@ function Nav() {
               />
               <button type="submit" className="rounded-md bg-primary px-3 py-2 text-xs font-semibold text-primary-foreground">Go</button>
             </form>
-            <div className="grid border-t border-white/10">
+            <div className="grid border-t border-gradient-to-r from-red-500/40 via-yellow-400/40 to-red-500/40">
               {navItems.map((item) => (
                 <NavLink
                   key={item.label}
@@ -184,6 +185,7 @@ function Nav() {
           </div>
         </div>
       )}
+      <div className="pointer-events-none absolute bottom-0 left-0 h-[2px] w-full bg-gradient-to-r from-red-500 via-yellow-400 to-red-500 opacity-90" />
     </nav>
   );
 }
