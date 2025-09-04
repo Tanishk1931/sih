@@ -15,6 +15,11 @@ import Archives from "./pages/Archives";
 import Calendar from "./pages/Calendar";
 import Transport from "./pages/Transport";
 import Contact from "./pages/Contact";
+import WhereToGo from "./pages/WhereToGo";
+import Experiences from "./pages/Experiences";
+import PlanTrip from "./pages/PlanTrip";
+import Monasteries from "./pages/Monasteries";
+import Festivals from "./pages/Festivals";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
