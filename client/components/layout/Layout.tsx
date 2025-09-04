@@ -1,29 +1,16 @@
 import { ReactNode, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 
-type NavChild = { label: string; to: string };
-const navItems: ({ label: string; to: string } | { label: string; children: NavChild[] })[] = [
-  { label: "Home", to: "/" },
-  {
-    label: "Explore",
-    children: [
-      { label: "Virtual Tours", to: "/virtual-tours" },
-      { label: "Monastery Map", to: "/map" },
-      { label: "Digital Archives", to: "/archives" },
-      { label: "Cultural Calendar", to: "/calendar" },
-    ],
-  },
-  {
-    label: "Plan",
-    children: [
-      { label: "Transport & Tourism", to: "/transport" },
-      { label: "About", to: "/about" },
-      { label: "Contact", to: "/contact" },
-    ],
-  },
+const navItems: { label: string; to: string }[] = [
+  { label: "Where to go", to: "/where-to-go" },
+  { label: "Experiences", to: "/experiences" },
+  { label: "Plan your trip", to: "/plan" },
+  { label: "Monasteries", to: "/monasteries" },
+  { label: "Festivals & Events", to: "/festivals" },
 ];
 
-function LanguageSwitcher() {
+/* Language switcher removed per new navbar spec */
+function LanguageSwitcherRemoved() {
   const [open, setOpen] = useState(false);
   const [lang, setLang] = useState("EN");
   const languages: { code: string; label: string }[] = [
@@ -79,7 +66,8 @@ function LanguageSwitcher() {
   );
 }
 
-function Dropdown({ label, children }: { label: string; children: ReactNode }) {
+/* Dropdown removed in favor of inline links per new navbar spec */
+function DropdownRemoved({ label, children }: { label: string; children: ReactNode }) {
   const [open, setOpen] = useState(false);
   return (
     <div className="relative" onMouseLeave={() => setOpen(false)}>
@@ -103,95 +91,72 @@ function Dropdown({ label, children }: { label: string; children: ReactNode }) {
 }
 
 function Nav() {
+  const [open, setOpen] = useState(false);
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-border/60 bg-white/85 backdrop-blur supports-[backdrop-filter]:bg-white/70">
+    <nav className="sticky top-0 z-50 w-full bg-gradient-to-b from-black/50 to-transparent text-white backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:py-4">
         <Link to="/" className="flex items-center gap-3">
-          <div className="flex h-9 w-9 items-center justify-center rounded-md bg-gradient-to-br from-primary to-yellow-500 text-white shadow-md">
-            <span className="font-bold">M</span>
+          <div className="flex h-9 w-9 items-center justify-center rounded-md bg-black text-yellow-400 shadow-md ring-1 ring-yellow-400/60">
+            <span className="font-extrabold">ST</span>
           </div>
           <div className="leading-tight">
-            <p className="font-extrabold tracking-tight text-foreground md:text-lg">Monastery360</p>
-            <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-muted-foreground md:text-xs">Sikkim Digital Heritage</p>
+            <p className="font-extrabold tracking-tight md:text-lg">Monastery360</p>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-yellow-300/90 md:text-xs">Sikkim Tourism</p>
           </div>
         </Link>
 
+        {/* Desktop links */}
         <div className="hidden items-center gap-1 md:flex">
-          {navItems.map((item) =>
-            "children" in item ? (
-              <Dropdown key={item.label} label={item.label}>
-                <ul className="grid gap-1">
-                  {item.children.map((child) => (
-                    <li key={child.to}>
-                      <NavLink
-                        to={child.to}
-                        className={({ isActive }) =>
-                          `block rounded px-3 py-2 text-sm ${
-                            isActive ? "bg-accent text-primary" : "hover:bg-accent"
-                          }`
-                        }
-                      >
-                        {child.label}
-                      </NavLink>
-                    </li>
-                  ))}
-                </ul>
-              </Dropdown>
-            ) : (
-              <NavLink
-                key={item.label}
-                to={item.to}
-                className={({ isActive }) =>
-                  `rounded px-3 py-2 text-sm font-semibold ${
-                    isActive ? "text-primary" : "hover:text-primary"
-                  }`
-                }
-              >
-                {item.label}
-              </NavLink>
-            ),
-          )}
-        </div>
-
-        <div className="flex items-center gap-3">
-          <LanguageSwitcher />
-          <Link
-            to="/virtual-tours"
-            className="hidden rounded-md bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow hover:brightness-110 md:inline-block"
-          >
-            Explore 360°
-          </Link>
-        </div>
-      </div>
-
-      {/* Mobile menu */}
-      <div className="md:hidden">
-        <div className="flex items-center gap-2 overflow-x-auto px-4 pb-3">
-          {(() => {
-            const items: { label: string; to: string }[] = [];
-            navItems.forEach((i) => {
-              if ("children" in i) {
-                items.push(...i.children);
-              } else if ("to" in i) {
-                items.push({ label: i.label, to: i.to });
+          {navItems.map((item) => (
+            <NavLink
+              key={item.label}
+              to={item.to}
+              className={({ isActive }) =>
+                `rounded-md px-3 py-2 text-sm font-semibold transition-colors duration-200 ${
+                  isActive ? "text-yellow-300" : "hover:text-yellow-300"
+                }`
               }
-            });
-            return items.map((child) => (
-              <NavLink
-                key={child.to}
-                to={child.to}
-                className={({ isActive }) =>
-                  `whitespace-nowrap rounded-full border px-3 py-1.5 text-xs ${
-                    isActive ? "border-primary text-primary" : "border-border"
-                  }`
-                }
-              >
-                {child.label}
-              </NavLink>
-            ));
-          })()}
+            >
+              {item.label}
+            </NavLink>
+          ))}
         </div>
+
+        {/* Mobile hamburger */}
+        <button
+          className="grid h-10 w-10 place-items-center rounded-md bg-black/40 ring-1 ring-white/15 md:hidden"
+          aria-label="Open menu"
+          onClick={() => setOpen((o) => !o)}
+        >
+          <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path strokeLinecap="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
       </div>
+
+      {/* Mobile dropdown */}
+      {open && (
+        <div className="mx-auto max-w-7xl px-4 pb-4 md:hidden">
+          <div className="overflow-hidden rounded-xl bg-black/80 shadow-xl ring-1 ring-white/10">
+            <div className="grid">
+              {navItems.map((item) => (
+                <NavLink
+                  key={item.label}
+                  to={item.to}
+                  onClick={() => setOpen(false)}
+                  className={({ isActive }) =>
+                    `block px-4 py-3 text-sm font-semibold transition-colors duration-200 ${
+                      isActive ? "bg-white/5 text-yellow-300" : "hover:bg-white/5 hover:text-yellow-300"
+                    }`
+                  }
+                >
+                  {item.label}
+                </NavLink>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </nav>
   );
 }
