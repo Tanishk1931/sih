@@ -36,9 +36,9 @@ export default function Index() {
           muted
           loop
           playsInline
-          poster="https://images.unsplash.com/photo-1542353436-312f0f28c3ec?q=80&w=1974&auto=format&fit=crop"
+          poster="https://www.keralatourism.org/ktadmin/img/pages/video/kumarakom-1707217580_9c58f84841733798a0db.mp4"
         >
-          <source src="" type="video/mp4" />
+          <source src="" type="https://www.keralatourism.org/ktadmin/img/pages/video/kumarakom-1707217580_9c58f84841733798a0db.mp4" />
         </video>
         <div className="absolute inset-0 z-10 mx-auto flex max-w-7xl flex-col justify-center px-4">
           <div className="max-w-3xl">
