@@ -170,12 +170,9 @@ function Nav() {
           {(() => {
             const items: { label: string; to: string }[] = [];
             navItems.forEach((i) => {
-              // @ts-expect-error - runtime check
-              if (i.children) {
-                // @ts-expect-error - runtime check
+              if ("children" in i) {
                 items.push(...i.children);
-              } else if ("to" in i && i.to) {
-                // @ts-expect-error - runtime check
+              } else if ("to" in i) {
                 items.push({ label: i.label, to: i.to });
               }
             });
