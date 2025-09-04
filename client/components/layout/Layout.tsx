@@ -1,7 +1,8 @@
 import { ReactNode, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 
-const navItems = [
+type NavChild = { label: string; to: string };
+const navItems: ({ label: string; to: string } | { label: string; children: NavChild[] })[] = [
   { label: "Home", to: "/" },
   {
     label: "Explore",
