@@ -90,6 +90,48 @@ function DropdownRemoved({ label, children }: { label: string; children: ReactNo
   );
 }
 
+function GlobeLanguage() {
+  const [open, setOpen] = useState(false);
+  const [lang, setLang] = useState("EN");
+  const languages = [
+    { code: "EN", label: "English" },
+    { code: "HI", label: "हिंदी" },
+    { code: "NE", label: "नेपाली" },
+  ];
+  return (
+    <div className="relative">
+      <button
+        aria-label="Change language"
+        className="grid h-10 w-10 place-items-center rounded-md bg-black/40 ring-1 ring-white/15 hover:bg-white/10"
+        onClick={() => setOpen((o) => !o)}
+      >
+        <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <path d="M12 3a9 9 0 100 18 9 9 0 000-18Z" />
+          <path d="M2.05 12h19.9M12 2.05v19.9" />
+        </svg>
+      </button>
+      {open && (
+        <ul className="absolute right-0 z-50 mt-2 w-40 overflow-hidden rounded-md border border-white/10 bg-black/85 text-sm shadow-xl">
+          {languages.map((l) => (
+            <li key={l.code}>
+              <button
+                className={`flex w-full items-center justify-between px-3 py-2 ${lang === l.code ? "text-yellow-300" : "text-white"} hover:bg-white/5`}
+                onClick={() => {
+                  setLang(l.code);
+                  setOpen(false);
+                }}
+              >
+                {l.label}
+                {lang === l.code && <span className="text-xs">●</span>}
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+}
+
 function Nav() {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
