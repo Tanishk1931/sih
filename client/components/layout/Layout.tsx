@@ -15,7 +15,7 @@ function LanguageSwitcherRemoved() {
   const [lang, setLang] = useState("EN");
   const languages: { code: string; label: string }[] = [
     { code: "EN", label: "English" },
-    { code: "NE", label: "नेपाली" },
+    { code: "NE", label: "��ेपाली" },
     { code: "HI", label: "हिंदी" },
     { code: "TB", label: "བོད་ཡིག" },
   ];
@@ -189,16 +189,19 @@ function Nav() {
           </div>
         </div>
 
-        {/* Mobile hamburger */}
-        <button
-          className="grid h-10 w-10 place-items-center rounded-md bg-black/40 ring-1 ring-white/15 md:hidden"
-          aria-label="Open menu"
-          onClick={() => setOpen((o) => !o)}
-        >
-          <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path strokeLinecap="round" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
+        {/* Mobile controls */}
+        <div className="flex items-center gap-2 md:hidden">
+          <GlobeLanguage />
+          <button
+            className="grid h-10 w-10 place-items-center rounded-md bg-black/40 ring-1 ring-white/15"
+            aria-label="Open menu"
+            onClick={() => setOpen((o) => !o)}
+          >
+            <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path strokeLinecap="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
       </div>
 
       {/* Mobile dropdown */}
