@@ -20,6 +20,7 @@ import Experiences from "./pages/Experiences";
 import PlanTrip from "./pages/PlanTrip";
 import Monasteries from "./pages/Monasteries";
 import Festivals from "./pages/Festivals";
+import Search from "./pages/Search";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
