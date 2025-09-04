@@ -61,27 +61,7 @@ export default function Index() {
 
         {/* Hero Content */}
         <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center text-white">
-          <h1 className="text-4xl md:text-6xl font-extrabold drop-shadow-lg">
-            Monastery360: A Digital Heritage Platform
-          </h1>
-          <p className="mt-4 max-w-2xl text-lg text-white/90">
-            Discover sacred spaces through immersive tours, curated archives, and
-            an interactive map—crafted with reverence for the Himalayas.
-          </p>
-          <div className="mt-6 flex gap-4">
-            <Link
-              to="/virtual-tours"
-              className="rounded-md bg-yellow-500 px-6 py-3 font-semibold text-black hover:bg-yellow-400"
-            >
-              Explore 360° Tours
-            </Link>
-            <Link
-              to="/archives"
-              className="rounded-md border border-yellow-400 bg-transparent px-6 py-3 font-semibold text-yellow-400 hover:bg-yellow-400 hover:text-black"
-            >
-              Browse Archives
-            </Link>
-          </div>
+          <div className="mt-6 flex gap-4" />
         </div>
       </section>
 
