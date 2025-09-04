@@ -118,7 +118,7 @@ function Nav() {
 
         <div className="hidden items-center gap-1 md:flex">
           {navItems.map((item) =>
-            item.children ? (
+            "children" in item ? (
               <Dropdown key={item.label} label={item.label}>
                 <ul className="grid gap-1">
                   {item.children.map((child) => (
@@ -140,7 +140,7 @@ function Nav() {
             ) : (
               <NavLink
                 key={item.label}
-                to={item.to!}
+                to={item.to}
                 className={({ isActive }) =>
                   `rounded px-3 py-2 text-sm font-semibold ${
                     isActive ? "text-primary" : "hover:text-primary"
