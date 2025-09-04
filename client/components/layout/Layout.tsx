@@ -175,7 +175,7 @@ function Nav() {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search tours, archives, monasteries..."
-              className="w-56 rounded-md bg.white/10 px-3 py-2 text-sm placeholder-white/70 outline-none ring-1 ring-white/20 focus:ring-yellow-300"
+              className="w-56 rounded-md bg-white/10 px-3 py-2 text-sm placeholder-white/70 outline-none ring-1 ring-white/20 focus:ring-yellow-300"
             />
             <button type="submit" aria-label="Search" className="grid h-10 w-10 place-items-center rounded-md bg-yellow-400/90 text-black shadow hover:bg-yellow-400">
               <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
