@@ -166,21 +166,32 @@ function Nav() {
       {/* Mobile menu */}
       <div className="md:hidden">
         <div className="flex items-center gap-2 overflow-x-auto px-4 pb-3">
-          {navItems.flatMap((item) =>
-            item.children ?? [item],
-          ).map((child) => (
-            <NavLink
-              key={("to" in child && child.to) || (child as any).label}
-              to={(child as any).to || "/"}
-              className={({ isActive }) =>
-                `whitespace-nowrap rounded-full border px-3 py-1.5 text-xs ${
-                  isActive ? "border-primary text-primary" : "border-border"
-                }`
+          {(() => {
+            const items: { label: string; to: string }[] = [];
+            navItems.forEach((i) => {
+              // @ts-expect-error - runtime check
+              if (i.children) {
+                // @ts-expect-error - runtime check
+                items.push(...i.children);
+              } else if ("to" in i && i.to) {
+                // @ts-expect-error - runtime check
+                items.push({ label: i.label, to: i.to });
               }
-            >
-              {(child as any).label}
-            </NavLink>
-          ))}
+            });
+            return items.map((child) => (
+              <NavLink
+                key={child.to}
+                to={child.to}
+                className={({ isActive }) =>
+                  `whitespace-nowrap rounded-full border px-3 py-1.5 text-xs ${
+                    isActive ? "border-primary text-primary" : "border-border"
+                  }`
+                }
+              >
+                {child.label}
+              </NavLink>
+            ));
+          })()}
         </div>
       </div>
     </nav>
