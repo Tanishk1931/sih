@@ -30,11 +30,16 @@ export default function Index() {
       {/* Hero */}
       <section className="relative isolate">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(1200px_400px_at_50%_10%,rgba(245,158,11,0.18),transparent),linear-gradient(to_bottom,rgba(0,0,0,0.75),rgba(0,0,0,0.35),rgba(0,0,0,0.75))]" />
-        <img
-          src="https://images.unsplash.com/photo-1542353436-312f0f28c3ec?q=80&w=1974&auto=format&fit=crop"
-          alt="Sikkim monastery in the Himalayas"
+        <video
           className="h-[64vh] w-full object-cover object-center md:h-[72vh]"
-        />
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster="https://images.unsplash.com/photo-1542353436-312f0f28c3ec?q=80&w=1974&auto=format&fit=crop"
+        >
+          <source src="" type="video/mp4" />
+        </video>
         <div className="absolute inset-0 z-10 mx-auto flex max-w-7xl flex-col justify-center px-4">
           <div className="max-w-3xl">
             <span className="inline-flex items-center gap-2 rounded-full bg-yellow-500/90 px-3 py-1 text-xs font-bold uppercase tracking-wider text-black shadow md:text-sm">
