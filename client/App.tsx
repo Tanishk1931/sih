@@ -56,4 +56,9 @@ const App = () => (
   </QueryClientProvider>
 );
 
-createRoot(document.getElementById("root")!).render(<App />);
+const container = document.getElementById("root")!;
+// Reuse the same root across HMR updates to avoid duplicate createRoot warnings
+// @ts-expect-error attach to window for persistence during HMR
+window.__FUSION_APP_ROOT__ = window.__FUSION_APP_ROOT__ || createRoot(container);
+// @ts-expect-error read from window
+window.__FUSION_APP_ROOT__.render(<App />);
