@@ -175,12 +175,18 @@ function Nav() {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search tours, archives, monasteries..."
-              className="w-56 rounded-md bg-white/10 px-3 py-2 text-sm placeholder-white/70 outline-none ring-1 ring-white/20 focus:ring-yellow-300"
+              className="w-56 rounded-md bg.white/10 px-3 py-2 text-sm placeholder-white/70 outline-none ring-1 ring-white/20 focus:ring-yellow-300"
             />
-            <button type="submit" className="rounded-md bg-primary px-3 py-2 text-xs font-semibold text-primary-foreground shadow hover:brightness-110">
-              Search
+            <button type="submit" aria-label="Search" className="grid h-10 w-10 place-items-center rounded-md bg-yellow-400/90 text-black shadow hover:bg-yellow-400">
+              <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M11 19a8 8 0 100-16 8 8 0 000 16z" />
+                <path d="M21 21l-4.3-4.3" />
+              </svg>
             </button>
           </form>
+          <div className="ml-2 hidden md:block">
+            <GlobeLanguage />
+          </div>
         </div>
 
         {/* Mobile hamburger */}
