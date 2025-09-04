@@ -1,5 +1,5 @@
 import { ReactNode, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 
 const navItems: { label: string; to: string }[] = [
   { label: "Where to go", to: "/where-to-go" },
@@ -92,20 +92,27 @@ function DropdownRemoved({ label, children }: { label: string; children: ReactNo
 
 function Nav() {
   const [open, setOpen] = useState(false);
+  const [query, setQuery] = useState("");
+  const navigate = useNavigate();
+  const onSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    const q = query.trim();
+    if (q.length) navigate(`/search?q=${encodeURIComponent(q)}`);
+    setOpen(false);
+  };
   return (
-    <nav className="sticky top-0 z-50 w-full bg-gradient-to-b from-black/50 to-transparent text-white backdrop-blur">
+    <nav className="sticky top-0 z-50 w-full bg-gradient-to-b from-red-900/70 to-transparent text-white backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:py-4">
         <Link to="/" className="flex items-center gap-3">
           <div className="flex h-9 w-9 items-center justify-center rounded-md bg-black text-yellow-400 shadow-md ring-1 ring-yellow-400/60">
             <span className="font-extrabold">ST</span>
           </div>
           <div className="leading-tight">
-            <p className="font-extrabold tracking-tight md:text-lg">Monastery360</p>
             <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-yellow-300/90 md:text-xs">Sikkim Tourism</p>
           </div>
         </Link>
 
-        {/* Desktop links */}
+        {/* Desktop links + search */}
         <div className="hidden items-center gap-1 md:flex">
           {navItems.map((item) => (
             <NavLink
@@ -120,6 +127,17 @@ function Nav() {
               {item.label}
             </NavLink>
           ))}
+          <form onSubmit={onSearch} className="ml-3 hidden items-center gap-2 md:flex">
+            <input
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Search tours, archives, monasteries..."
+              className="w-56 rounded-md bg-white/10 px-3 py-2 text-sm placeholder-white/70 outline-none ring-1 ring-white/20 focus:ring-yellow-300"
+            />
+            <button type="submit" className="rounded-md bg-primary px-3 py-2 text-xs font-semibold text-primary-foreground shadow hover:brightness-110">
+              Search
+            </button>
+          </form>
         </div>
 
         {/* Mobile hamburger */}
@@ -138,7 +156,16 @@ function Nav() {
       {open && (
         <div className="mx-auto max-w-7xl px-4 pb-4 md:hidden">
           <div className="overflow-hidden rounded-xl bg-black/80 shadow-xl ring-1 ring-white/10">
-            <div className="grid">
+            <form onSubmit={onSearch} className="flex gap-2 px-4 py-3">
+              <input
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="Search tours, archives, monasteries..."
+                className="w-full rounded-md bg-white/10 px-3 py-2 text-sm placeholder-white/70 outline-none ring-1 ring-white/20 focus:ring-yellow-300"
+              />
+              <button type="submit" className="rounded-md bg-primary px-3 py-2 text-xs font-semibold text-primary-foreground">Go</button>
+            </form>
+            <div className="grid border-t border-white/10">
               {navItems.map((item) => (
                 <NavLink
                   key={item.label}
