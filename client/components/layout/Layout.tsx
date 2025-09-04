@@ -15,7 +15,7 @@ function LanguageSwitcherRemoved() {
   const [lang, setLang] = useState("EN");
   const languages: { code: string; label: string }[] = [
     { code: "EN", label: "English" },
-    { code: "NE", label: "��ेपाली" },
+    { code: "NE", label: "नेपाली" },
     { code: "HI", label: "हिंदी" },
     { code: "TB", label: "བོད་ཡིག" },
   ];
@@ -215,7 +215,12 @@ function Nav() {
                 placeholder="Search tours, archives, monasteries..."
                 className="w-full rounded-md bg-white/10 px-3 py-2 text-sm placeholder-white/70 outline-none ring-1 ring-white/20 focus:ring-yellow-300"
               />
-              <button type="submit" className="rounded-md bg-primary px-3 py-2 text-xs font-semibold text-primary-foreground">Go</button>
+              <button type="submit" aria-label="Search" className="grid h-10 w-10 place-items-center rounded-md bg-yellow-400/90 text-black">
+                <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M11 19a8 8 0 100-16 8 8 0 000 16z" />
+                  <path d="M21 21l-4.3-4.3" />
+                </svg>
+              </button>
             </form>
             <div className="grid border-t border-gradient-to-r from-red-500/40 via-yellow-400/40 to-red-500/40">
               {navItems.map((item) => (
