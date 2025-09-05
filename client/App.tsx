@@ -21,6 +21,10 @@ import PlanTrip from "./pages/PlanTrip";
 import Monasteries from "./pages/Monasteries";
 import Festivals from "./pages/Festivals";
 import Search from "./pages/Search";
+import ZeroPoint from "./pages/ZeroPoint";
+import Gangtok from "./pages/Gangtok";
+import Heritage from "./pages/Heritage";
+import Lachung from "./pages/Lachung";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -47,6 +51,10 @@ const App = () => (
             <Route path="/monasteries" element={<Monasteries />} />
             <Route path="/festivals" element={<Festivals />} />
             <Route path="/search" element={<Search />} />
+            <Route path="/zero-point" element={<ZeroPoint />} />
+            <Route path="/gangtok" element={<Gangtok />} />
+            <Route path="/heritage" element={<Heritage />} />
+            <Route path="/lachung" element={<Lachung />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
