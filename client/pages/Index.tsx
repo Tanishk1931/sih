@@ -49,7 +49,7 @@ function WondersHeader() {
       <p className="mx-auto mt-2 max-w-2xl text-sm text-white/80 md:text-base">
         Enjoy the magnificent and varied allure of God's Own Country
       </p>
-      <div className="mx-auto mt-4 h-1 w-36 rounded-full bg-gradient-to-r from-red-500 via-yellow-400 to-red-500" />
+      <div className="mx-auto mt-4 h-1 w-36 rounded-full bg-gradient-to-r from-[hsl(var(--brand-red))] via-[hsl(var(--brand-yellow))] to-[hsl(var(--brand-red))]" />
     </div>
   );
 }
