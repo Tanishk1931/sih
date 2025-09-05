@@ -220,7 +220,7 @@ function InspiredSection() {
                   onMouseEnter={() => setHovered(i)}
                   onMouseLeave={() => setHovered(null)}
                   onClick={() => setSelected(i)}
-                  className={`group relative h-[20rem] w-[88%] min-w-[88%] snap-center overflow-hidden rounded-2xl ring-1 ring-white/10 shadow-xl transition-all duration-500 ease-out sm:w-[68%] sm:min-w-[68%] md:h-[24rem] md:w-[50%] md:min-w-[50%] lg:h-[26rem] lg:w-[40%] lg:min-w-[40%] ${scaleClass}`}
+                  className={`group relative h-[26rem] w-[90%] min-w-[90%] snap-center overflow-hidden rounded-2xl ring-1 ring-white/10 shadow-2xl transition-all duration-500 ease-out sm:w-[72%] sm:min-w-[72%] md:h-[30rem] md:w-[54%] md:min-w-[54%] lg:h-[36rem] lg:w-[44%] lg:min-w-[44%] ${scaleClass}`}
                 >
                   <img src={it.img} alt={it.title} className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.06]" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--brand-black))] via-[hsl(var(--brand-black))/0.35] to-transparent" />
