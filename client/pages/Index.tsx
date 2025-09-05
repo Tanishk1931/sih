@@ -71,31 +71,31 @@ function WondersGrid() {
       title: "Monasteries",
       to: "/monasteries",
       desc: "Ancient gompas, rituals, and living traditions.",
-      img: "https://images.unsplash.com/photo-1628659450522-dc20076cedb9?q=80&w=1600&auto=format&fit=crop",
+      img: "https://source.unsplash.com/1600x900/?sikkim,monastery",
     },
     {
       title: "Zero Point",
       to: "/zero-point",
       desc: "High‑altitude snow vistas at the road’s edge.",
-      img: "https://images.unsplash.com/photo-1519680772-8b59e56b27df?q=80&w=1600&auto=format&fit=crop",
+      img: "https://source.unsplash.com/1600x900/?zero%20point,sikkim,snow",
     },
     {
       title: "Gangtok",
       to: "/gangtok",
       desc: "The vibrant capital with culture and cuisine.",
-      img: "https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=1600&auto=format&fit=crop",
+      img: "https://source.unsplash.com/1600x900/?gangtok,city,night",
     },
     {
       title: "Sikkim Cultural Heritage",
       to: "/heritage",
       desc: "Art, language, and festivals that define Sikkim.",
-      img: "https://images.unsplash.com/photo-1548013146-53a63a39d1e4?q=80&w=1600&auto=format&fit=crop",
+      img: "https://source.unsplash.com/1600x900/?sikkim,culture,festival",
     },
     {
       title: "Lachung",
       to: "/lachung",
       desc: "Gateway to Yumthang with stunning valleys.",
-      img: "https://images.unsplash.com/photo-1613040903923-a5c9a2cc5ae0?q=80&w=1600&auto=format&fit=crop",
+      img: "https://source.unsplash.com/1600x900/?lachung,valley",
     },
   ];
 
