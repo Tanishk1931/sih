@@ -126,7 +126,7 @@ function WondersGrid() {
             alt={c.title}
             className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--brand-black))] via-[hsl(var(--brand-black))/0.3] to-transparent" />
           <div className="absolute inset-x-0 bottom-0 p-6">
             <h3 className="text-xl font-extrabold text-white drop-shadow">
               {c.title}
