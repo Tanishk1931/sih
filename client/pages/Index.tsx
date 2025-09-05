@@ -99,6 +99,12 @@ function WondersGrid() {
       desc: "Gateway to Yumthang with stunning valleys.",
       img: "https://source.unsplash.com/1600x900/?lachung,valley",
     },
+    {
+      title: "Thangu Valley",
+      to: "/thangu-valley",
+      desc: "Pristine alpine meadows near Lachen with dramatic vistas.",
+      img: "https://source.unsplash.com/1600x900/?thangu,valley,sikkim",
+    },
   ];
 
   return (
