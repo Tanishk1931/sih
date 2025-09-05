@@ -196,7 +196,7 @@ function InspiredSection() {
   };
   return (
     <section className="relative w-full bg-[hsl(var(--brand-black))]">
-      <div className="mx-auto max-w-7xl px-4 py-14">
+      <div className="mx-auto max-w-7xl px-4 py-24 md:py-28">
         <div className="mb-8 text-center text-white">
           <h2 className="text-4xl font-extrabold md:text-5xl">Get Inspired to Explore Sikkim</h2>
           <div className="mx-auto mt-3 h-1 w-40 rounded-full bg-gradient-to-r from-[hsl(var(--brand-red))] via-[hsl(var(--brand-yellow))] to-[hsl(var(--brand-red))]" />
