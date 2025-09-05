@@ -27,6 +27,11 @@ import Heritage from "./pages/Heritage";
 import Lachung from "./pages/Lachung";
 import ThanguValley from "./pages/ThanguValley";
 import NotFound from "./pages/NotFound";
+import InspireHistory from "./pages/inspired/History";
+import InspireViews from "./pages/inspired/Views";
+import InspireResorts from "./pages/inspired/Resorts";
+import InspireFree from "./pages/inspired/FreeThings";
+import InspireKids from "./pages/inspired/Kids";
 
 const queryClient = new QueryClient();
 
