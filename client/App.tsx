@@ -25,6 +25,7 @@ import ZeroPoint from "./pages/ZeroPoint";
 import Gangtok from "./pages/Gangtok";
 import Heritage from "./pages/Heritage";
 import Lachung from "./pages/Lachung";
+import ThanguValley from "./pages/ThanguValley";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
