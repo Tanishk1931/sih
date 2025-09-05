@@ -56,6 +56,7 @@ const App = () => (
             <Route path="/gangtok" element={<Gangtok />} />
             <Route path="/heritage" element={<Heritage />} />
             <Route path="/lachung" element={<Lachung />} />
+            <Route path="/thangu-valley" element={<ThanguValley />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
