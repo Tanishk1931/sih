@@ -197,7 +197,7 @@ export default function Index() {
       </section>
 
       {/* Sikkim Stunning Wonders */}
-      <section className="relative w-full bg-gradient-to-b from-black via-black to-zinc-950">
+      <section className="relative w-full bg-gradient-to-b from-[hsl(var(--brand-black))] via-[hsl(var(--brand-black))] to-[hsl(var(--brand-black))]">
         <div className="mx-auto max-w-7xl px-4 py-14">
           <WondersHeader />
           <WondersGrid />
