@@ -40,6 +40,102 @@ const features = [
   },
 ];
 
+function WondersHeader() {
+  return (
+    <div className="mb-8 text-center text-white">
+      <h2 className="text-3xl font-extrabold md:text-4xl">Sikkim Stunning Wonders</h2>
+      <p className="mx-auto mt-2 max-w-2xl text-sm text-white/80 md:text-base">
+        Enjoy the magnificent and varied allure of God's Own Country
+      </p>
+      <div className="mx-auto mt-4 h-1 w-36 rounded-full bg-gradient-to-r from-red-500 via-yellow-400 to-red-500" />
+    </div>
+  );
+}
+
+function WondersGrid() {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      (entries) => entries.forEach((e) => e.isIntersecting && setVisible(true)),
+      { threshold: 0.2 },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  const wonders = [
+    {
+      title: "Monasteries",
+      to: "/monasteries",
+      desc: "Ancient gompas, rituals, and living traditions.",
+      img: "https://images.unsplash.com/photo-1628659450522-dc20076cedb9?q=80&w=1600&auto=format&fit=crop",
+    },
+    {
+      title: "Zero Point",
+      to: "/zero-point",
+      desc: "High‑altitude snow vistas at the road’s edge.",
+      img: "https://images.unsplash.com/photo-1519680772-8b59e56b27df?q=80&w=1600&auto=format&fit=crop",
+    },
+    {
+      title: "Gangtok",
+      to: "/gangtok",
+      desc: "The vibrant capital with culture and cuisine.",
+      img: "https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=1600&auto=format&fit=crop",
+    },
+    {
+      title: "Sikkim Cultural Heritage",
+      to: "/heritage",
+      desc: "Art, language, and festivals that define Sikkim.",
+      img: "https://images.unsplash.com/photo-1548013146-53a63a39d1e4?q=80&w=1600&auto=format&fit=crop",
+    },
+    {
+      title: "Lachung",
+      to: "/lachung",
+      desc: "Gateway to Yumthang with stunning valleys.",
+      img: "https://images.unsplash.com/photo-1613040903923-a5c9a2cc5ae0?q=80&w=1600&auto=format&fit=crop",
+    },
+  ];
+
+  return (
+    <div
+      ref={ref}
+      className={`grid gap-4 md:grid-cols-5 ${
+        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+      } transition-all duration-700 ease-out`}
+    >
+      {wonders.map((c, i) => (
+        <Link
+          key={c.title}
+          to={c.to}
+          className="group relative block h-72 overflow-hidden rounded-2xl ring-1 ring-white/10 shadow-lg md:h-80"
+          style={{ transitionDelay: `${i * 80}ms` }}
+        >
+          <img
+            src={c.img}
+            alt={c.title}
+            className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 p-5">
+            <h3 className="text-lg font-extrabold text-white drop-shadow">{c.title}</h3>
+            <p className="mt-1 text-sm text-white/85">{c.desc}</p>
+            <span className="mt-3 inline-flex items-center gap-1 rounded-md bg-yellow-400/90 px-2 py-1 text-xs font-semibold text-black shadow">
+              Explore
+              <svg className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
+                <path d="M10.293 3.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 11-1.414-1.414L13.586 11H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 010-1.414z" />
+              </svg>
+            </span>
+          </div>
+          <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-red-500/20 group-hover:ring-yellow-400/40" />
+        </Link>
+      ))}
+    </div>
+  );
+}
+
 export default function Index() {
   return (
     <div>
