@@ -170,7 +170,7 @@ function Nav() {
     setOpen(false);
   };
   return (
-    <nav className="sticky top-0 z-50 w-full text-white backdrop-blur relative bg-black/70">
+    <nav className="sticky top-0 z-50 w-full text-white backdrop-blur relative bg-[hsl(var(--brand-black)/0.7)]">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(600px_160px_at_10%_0%,rgba(234,179,8,0.12),transparent),radial-gradient(600px_160px_at_90%_0%,rgba(239,68,68,0.18),transparent)]" />
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:py-4">
         <Link to="/" className="flex items-center gap-3">
