@@ -188,7 +188,7 @@ export default function Index() {
         </video>
 
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="absolute inset-0 bg-[hsl(var(--brand-black)/0.5)]"></div>
 
         {/* Hero Content */}
         <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center text-white">
