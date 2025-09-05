@@ -43,7 +43,9 @@ const features = [
 function WondersHeader() {
   return (
     <div className="mb-8 text-center text-white">
-      <h2 className="text-3xl font-extrabold md:text-4xl">Sikkim Stunning Wonders</h2>
+      <h2 className="text-3xl font-extrabold md:text-4xl">
+        Sikkim Stunning Wonders
+      </h2>
       <p className="mx-auto mt-2 max-w-2xl text-sm text-white/80 md:text-base">
         Enjoy the magnificent and varied allure of God's Own Country
       </p>
@@ -120,11 +122,18 @@ function WondersGrid() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
           <div className="absolute inset-x-0 bottom-0 p-6">
-            <h3 className="text-xl font-extrabold text-white drop-shadow">{c.title}</h3>
+            <h3 className="text-xl font-extrabold text-white drop-shadow">
+              {c.title}
+            </h3>
             <p className="mt-2 text-sm text-white/90">{c.desc}</p>
             <span className="mt-4 inline-flex items-center gap-1 rounded-md bg-yellow-400/95 px-2.5 py-1.5 text-xs font-semibold text-black shadow">
               Explore
-              <svg className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
+              <svg
+                className="h-4 w-4"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden
+              >
                 <path d="M10.293 3.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 11-1.414-1.414L13.586 11H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 010-1.414z" />
               </svg>
             </span>
