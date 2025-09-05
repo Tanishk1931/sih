@@ -186,6 +186,8 @@ function InspiredSection() {
   ];
   const scroller = useRef<HTMLDivElement | null>(null);
   const [hovered, setHovered] = useState<number | null>(null);
+  const [selected, setSelected] = useState<number | null>(null);
+  const activeIndex = (i: number) => (hovered !== null ? hovered === i : selected === i);
   const scroll = (dir: "left" | "right") => {
     const el = scroller.current;
     if (!el) return;
@@ -193,11 +195,11 @@ function InspiredSection() {
     el.scrollBy({ left: dir === "left" ? -amount : amount, behavior: "smooth" });
   };
   return (
-    <section className="relative w-full bg-[linear-gradient(180deg,hsl(var(--brand-black))_0%,hsl(var(--brand-black))_40%,hsl(var(--brand-red))/12_100%)]">
+    <section className="relative w-full bg-[hsl(var(--brand-black))]">
       <div className="mx-auto max-w-7xl px-4 py-14">
-        <div className="mb-8 flex flex-col gap-3 text-white md:flex-row md:items-end md:justify-between">
+        <div className="mb-8 text-center text-white">
           <h2 className="text-3xl font-extrabold md:text-4xl">Get Inspired to Explore Sikkim</h2>
-          <div className="h-1 w-40 rounded-full bg-gradient-to-r from-[hsl(var(--brand-red))] via-[hsl(var(--brand-yellow))] to-[hsl(var(--brand-red))] md:mb-1" />
+          <div className="mx-auto mt-3 h-1 w-40 rounded-full bg-gradient-to-r from-[hsl(var(--brand-red))] via-[hsl(var(--brand-yellow))] to-[hsl(var(--brand-red))]" />
         </div>
 
         <div className="relative">
@@ -208,23 +210,28 @@ function InspiredSection() {
             <svg className="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor"><path d="M7.707 4.293a1 1 0 010 1.414L5.414 8H14a1 1 0 110 2H5.414l2.293 2.293a1 1 0 11-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"/></svg>
           </button>
           <div ref={scroller} className="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pr-8 pl-8 md:pl-12 md:pr-12">
-            {items.map((it, i) => (
-              <Link
-                key={it.title}
-                to={it.to}
-                onMouseEnter={() => setHovered(i)}
-                onMouseLeave={() => setHovered(null)}
-                className={`group relative h-[18rem] w-[85%] min-w-[85%] snap-center overflow-hidden rounded-2xl ring-1 ring-white/10 shadow-lg transition-all duration-500 ease-out sm:w-[65%] sm:min-w-[65%] md:h-[22rem] md:w-[48%] md:min-w-[48%] lg:h-[24rem] lg:w-[38%] lg:min-w-[38%] ${hovered === i ? "scale-[1.03]" : "scale-[0.98]"}`}
-              >
-                <img src={it.img} alt={it.title} className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.06]" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--brand-black))] via-[hsl(var(--brand-black))/0.35] to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 p-5">
-                  <h3 className="text-lg font-extrabold text-white drop-shadow">{it.title}</h3>
-                  <p className="mt-1 text-sm text-white/85">{it.desc}</p>
-                </div>
-                <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-red-500/25 group-hover:ring-yellow-400/50" />
-              </Link>
-            ))}
+            {items.map((it, i) => {
+              const isActive = activeIndex(i);
+              const scaleClass = isActive ? "scale-[1.08]" : hovered !== null || selected !== null ? "scale-[0.95]" : "scale-[0.98]";
+              return (
+                <Link
+                  key={it.title}
+                  to={it.to}
+                  onMouseEnter={() => setHovered(i)}
+                  onMouseLeave={() => setHovered(null)}
+                  onClick={() => setSelected(i)}
+                  className={`group relative h-[20rem] w-[88%] min-w-[88%] snap-center overflow-hidden rounded-2xl ring-1 ring-white/10 shadow-xl transition-all duration-500 ease-out sm:w-[68%] sm:min-w-[68%] md:h-[24rem] md:w-[50%] md:min-w-[50%] lg:h-[26rem] lg:w-[40%] lg:min-w-[40%] ${scaleClass}`}
+                >
+                  <img src={it.img} alt={it.title} className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.06]" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--brand-black))] via-[hsl(var(--brand-black))/0.35] to-transparent" />
+                  <div className="absolute inset-x-0 bottom-0 p-5">
+                    <h3 className="text-lg font-extrabold text-white drop-shadow">{it.title}</h3>
+                    <p className="mt-1 text-sm text-white/85">{it.desc}</p>
+                  </div>
+                  <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-red-500/25 group-hover:ring-yellow-400/50" />
+                </Link>
+              );
+            })}
           </div>
         </div>
       </div>
