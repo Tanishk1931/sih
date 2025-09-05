@@ -187,32 +187,65 @@ function InspiredSection() {
   const scroller = useRef<HTMLDivElement | null>(null);
   const [hovered, setHovered] = useState<number | null>(null);
   const [selected, setSelected] = useState<number | null>(null);
-  const activeIndex = (i: number) => (hovered !== null ? hovered === i : selected === i);
+  const activeIndex = (i: number) =>
+    hovered !== null ? hovered === i : selected === i;
   const scroll = (dir: "left" | "right") => {
     const el = scroller.current;
     if (!el) return;
     const amount = el.clientWidth * 0.9;
-    el.scrollBy({ left: dir === "left" ? -amount : amount, behavior: "smooth" });
+    el.scrollBy({
+      left: dir === "left" ? -amount : amount,
+      behavior: "smooth",
+    });
   };
   return (
     <section className="relative w-full bg-[hsl(var(--brand-black))]">
       <div className="mx-auto max-w-7xl px-4 py-24 md:py-28">
         <div className="mb-8 text-center text-white">
-          <h2 className="text-4xl font-extrabold md:text-5xl">Get Inspired to Explore Sikkim</h2>
+          <h2 className="text-4xl font-extrabold md:text-5xl">
+            Get Inspired to Explore Sikkim
+          </h2>
           <div className="mx-auto mt-3 h-1 w-40 rounded-full bg-gradient-to-r from-[hsl(var(--brand-red))] via-[hsl(var(--brand-yellow))] to-[hsl(var(--brand-red))]" />
         </div>
 
         <div className="relative">
-          <button aria-label="Previous" onClick={() => scroll("left")} className="absolute left-0 top-1/2 z-10 -translate-y-1/2 rounded-full bg-[hsl(var(--brand-black)/0.6)] p-2 ring-1 ring-white/15 hover:bg-white/10">
-            <svg className="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor"><path d="M12.293 15.707a1 1 0 010-1.414L14.586 12H6a1 1 0 110-2h8.586l-2.293-2.293a1 1 0 111.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"/></svg>
+          <button
+            aria-label="Previous"
+            onClick={() => scroll("left")}
+            className="absolute left-0 top-1/2 z-10 -translate-y-1/2 rounded-full bg-[hsl(var(--brand-black)/0.6)] p-2 ring-1 ring-white/15 hover:bg-white/10"
+          >
+            <svg
+              className="h-5 w-5 text-white"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path d="M12.293 15.707a1 1 0 010-1.414L14.586 12H6a1 1 0 110-2h8.586l-2.293-2.293a1 1 0 111.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" />
+            </svg>
           </button>
-          <button aria-label="Next" onClick={() => scroll("right")} className="absolute right-0 top-1/2 z-10 -translate-y-1/2 rounded-full bg-[hsl(var(--brand-black)/0.6)] p-2 ring-1 ring-white/15 hover:bg-white/10">
-            <svg className="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor"><path d="M7.707 4.293a1 1 0 010 1.414L5.414 8H14a1 1 0 110 2H5.414l2.293 2.293a1 1 0 11-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"/></svg>
+          <button
+            aria-label="Next"
+            onClick={() => scroll("right")}
+            className="absolute right-0 top-1/2 z-10 -translate-y-1/2 rounded-full bg-[hsl(var(--brand-black)/0.6)] p-2 ring-1 ring-white/15 hover:bg-white/10"
+          >
+            <svg
+              className="h-5 w-5 text-white"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path d="M7.707 4.293a1 1 0 010 1.414L5.414 8H14a1 1 0 110 2H5.414l2.293 2.293a1 1 0 11-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" />
+            </svg>
           </button>
-          <div ref={scroller} className="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pr-8 pl-8 md:pl-12 md:pr-12">
+          <div
+            ref={scroller}
+            className="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pr-8 pl-8 md:pl-12 md:pr-12"
+          >
             {items.map((it, i) => {
               const isActive = activeIndex(i);
-              const scaleClass = isActive ? "scale-[1.08]" : hovered !== null || selected !== null ? "scale-[0.95]" : "scale-[0.98]";
+              const scaleClass = isActive
+                ? "scale-[1.08]"
+                : hovered !== null || selected !== null
+                  ? "scale-[0.95]"
+                  : "scale-[0.98]";
               return (
                 <Link
                   key={it.title}
@@ -222,10 +255,16 @@ function InspiredSection() {
                   onClick={() => setSelected(i)}
                   className={`group relative h-[26rem] w-[90%] min-w-[90%] snap-center overflow-hidden rounded-2xl ring-1 ring-white/10 shadow-2xl transition-all duration-500 ease-out sm:w-[72%] sm:min-w-[72%] md:h-[30rem] md:w-[54%] md:min-w-[54%] lg:h-[36rem] lg:w-[44%] lg:min-w-[44%] ${scaleClass}`}
                 >
-                  <img src={it.img} alt={it.title} className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.06]" />
+                  <img
+                    src={it.img}
+                    alt={it.title}
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.06]"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--brand-black))] via-[hsl(var(--brand-black))/0.35] to-transparent" />
                   <div className="absolute inset-x-0 bottom-0 p-5">
-                    <h3 className="text-lg font-extrabold text-white drop-shadow">{it.title}</h3>
+                    <h3 className="text-lg font-extrabold text-white drop-shadow">
+                      {it.title}
+                    </h3>
                     <p className="mt-1 text-sm text-white/85">{it.desc}</p>
                   </div>
                   <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-red-500/25 group-hover:ring-yellow-400/50" />
