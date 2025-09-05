@@ -62,6 +62,11 @@ const App = () => (
             <Route path="/heritage" element={<Heritage />} />
             <Route path="/lachung" element={<Lachung />} />
             <Route path="/thangu-valley" element={<ThanguValley />} />
+            <Route path="/inspire/history" element={<InspireHistory />} />
+            <Route path="/inspire/views" element={<InspireViews />} />
+            <Route path="/inspire/resorts" element={<InspireResorts />} />
+            <Route path="/inspire/free" element={<InspireFree />} />
+            <Route path="/inspire/kids" element={<InspireKids />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
