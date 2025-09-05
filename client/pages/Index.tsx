@@ -102,7 +102,7 @@ function WondersGrid() {
   return (
     <div
       ref={ref}
-      className={`grid gap-4 md:grid-cols-5 ${
+      className={`grid gap-6 md:grid-cols-3 ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
       } transition-all duration-700 ease-out`}
     >
@@ -110,8 +110,8 @@ function WondersGrid() {
         <Link
           key={c.title}
           to={c.to}
-          className="group relative block h-72 overflow-hidden rounded-2xl ring-1 ring-white/10 shadow-lg md:h-80"
-          style={{ transitionDelay: `${i * 80}ms` }}
+          className="group relative block h-[22rem] overflow-hidden rounded-2xl ring-1 ring-white/10 shadow-xl md:h-[26rem]"
+          style={{ transitionDelay: `${i * 90}ms` }}
         >
           <img
             src={c.img}
@@ -119,17 +119,17 @@ function WondersGrid() {
             className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
-          <div className="absolute inset-x-0 bottom-0 p-5">
-            <h3 className="text-lg font-extrabold text-white drop-shadow">{c.title}</h3>
-            <p className="mt-1 text-sm text-white/85">{c.desc}</p>
-            <span className="mt-3 inline-flex items-center gap-1 rounded-md bg-yellow-400/90 px-2 py-1 text-xs font-semibold text-black shadow">
+          <div className="absolute inset-x-0 bottom-0 p-6">
+            <h3 className="text-xl font-extrabold text-white drop-shadow">{c.title}</h3>
+            <p className="mt-2 text-sm text-white/90">{c.desc}</p>
+            <span className="mt-4 inline-flex items-center gap-1 rounded-md bg-yellow-400/95 px-2.5 py-1.5 text-xs font-semibold text-black shadow">
               Explore
               <svg className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
                 <path d="M10.293 3.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 11-1.414-1.414L13.586 11H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 010-1.414z" />
               </svg>
             </span>
           </div>
-          <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-red-500/20 group-hover:ring-yellow-400/40" />
+          <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-red-500/25 group-hover:ring-yellow-400/50" />
         </Link>
       ))}
     </div>
