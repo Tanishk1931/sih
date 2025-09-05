@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
 
 const quickLinks = [
   {
@@ -84,59 +85,11 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Sikkim Highlights Cards */}
-      <section className="relative mx-auto -mt-10 max-w-7xl px-4 md:-mt-12">
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black via-black to-zinc-900" />
-        <div className="py-10">
-          <h2 className="mb-6 text-center text-2xl font-extrabold tracking-tight text-white md:text-3xl">
-            Discover Sikkim
-          </h2>
-          <div className="grid gap-4 md:grid-cols-5">
-            {[
-              {
-                title: "Monasteries",
-                to: "/monasteries",
-                desc: "Ancient gompas, rituals, and living traditions.",
-              },
-              {
-                title: "Zero Point",
-                to: "/zero-point",
-                desc: "High‑altitude snow vistas at the edge of roads.",
-              },
-              {
-                title: "Gangtok",
-                to: "/gangtok",
-                desc: "The vibrant capital with culture and cuisine.",
-              },
-              {
-                title: "Sikkim Cultural Heritage",
-                to: "/heritage",
-                desc: "Art, language, and festivals that define Sikkim.",
-              },
-              {
-                title: "Lachung",
-                to: "/lachung",
-                desc: "Gateway to Yumthang with stunning valleys.",
-              },
-            ].map((c) => (
-              <a
-                key={c.title}
-                href={c.to}
-                className="group relative overflow-hidden rounded-xl border border-white/10 bg-gradient-to-br from-zinc-900 via-black to-zinc-950 p-5 shadow transition hover:-translate-y-0.5 hover:shadow-xl"
-              >
-                <div className="pointer-events-none absolute -right-6 -top-6 h-24 w-24 rounded-full bg-red-500/25 blur-2xl transition group-hover:-right-4 group-hover:-top-4" />
-                <div className="pointer-events-none absolute -bottom-10 -left-8 h-24 w-24 rounded-full bg-yellow-400/20 blur-2xl transition group-hover:-left-6 group-hover:-bottom-8" />
-                <h3 className="text-lg font-extrabold text-white">{c.title}</h3>
-                <p className="mt-2 text-sm text-white/80">{c.desc}</p>
-                <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-yellow-300">
-                  Explore
-                  <svg className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
-                    <path d="M10.293 3.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 11-1.414-1.414L13.586 11H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 010-1.414z" />
-                  </svg>
-                </span>
-              </a>
-            ))}
-          </div>
+      {/* Sikkim Stunning Wonders */}
+      <section className="relative w-full bg-gradient-to-b from-black via-black to-zinc-950">
+        <div className="mx-auto max-w-7xl px-4 py-14">
+          <WondersHeader />
+          <WondersGrid />
         </div>
       </section>
 
