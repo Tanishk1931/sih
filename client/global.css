@@ -130,6 +130,37 @@
     font-family:
       Merriweather, ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   }
+
+  /* Global 3D button effect */
+  button {
+    position: relative;
+    font-weight: 800;
+    transition: transform 200ms ease, box-shadow 200ms ease, filter 200ms ease;
+    will-change: transform, box-shadow;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+  }
+  button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 32px rgba(0,0,0,0.35);
+    filter: brightness(1.02);
+  }
+  button:active {
+    transform: translateY(1px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.30), inset 0 2px 6px rgba(0,0,0,0.25);
+    filter: brightness(0.98);
+  }
+  button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.25), rgba(0,0,0,0.12));
+    opacity: 0.22;
+    pointer-events: none;
+    transition: opacity 200ms ease;
+  }
+  button:hover::before { opacity: 0.32; }
+  button:active::before { opacity: 0.18; }
 }
 
 @layer utilities {
