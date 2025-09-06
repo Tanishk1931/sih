@@ -144,7 +144,7 @@ function WondersGrid() {
               </svg>
             </span>
           </div>
-          <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-red-500/25 group-hover:ring-yellow-400/50" />
+          <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-red-600/30 drop-shadow-[0_0_10px_rgba(213,0,0,0.35)] group-hover:ring-yellow-400/60 group-hover:drop-shadow-[0_0_18px_rgba(255,193,7,0.55)]" />
         </Link>
       ))}
     </div>
@@ -267,7 +267,7 @@ function InspiredSection() {
                     </h3>
                     <p className="mt-1 text-sm text-white/85">{it.desc}</p>
                   </div>
-                  <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-red-500/25 group-hover:ring-yellow-400/50" />
+                  <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-red-600/30 drop-shadow-[0_0_10px_rgba(213,0,0,0.35)] group-hover:ring-yellow-400/60 group-hover:drop-shadow-[0_0_18px_rgba(255,193,7,0.55)]" />
                 </Link>
               );
             })}
