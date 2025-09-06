@@ -212,7 +212,7 @@ function InspiredSection() {
           <button
             aria-label="Previous"
             onClick={() => scroll("left")}
-            className="absolute left-0 top-1/2 z-10 -translate-y-1/2 rounded-full bg-[hsl(var(--brand-black)/0.6)] p-2 ring-1 ring-white/15 hover:bg-white/10"
+            className="absolute left-0 top-1/2 z-10 -translate-y-1/2 rounded-full bg-gradient-to-b from-[hsl(var(--brand-black)/0.55)] to-[hsl(var(--brand-black)/0.85)] p-2 ring-1 ring-white/15 shadow-[0_8px_18px_rgba(0,0,0,0.45)] transition-all duration-200 will-change-transform hover:-translate-y-0.5 hover:shadow-[0_14px_28px_rgba(0,0,0,0.55)] active:translate-y-[1px] active:shadow-[0_6px_12px_rgba(0,0,0,0.45),inset_0_2px_6px_rgba(0,0,0,0.35)]"
           >
             <svg
               className="h-5 w-5 text-white"
@@ -225,7 +225,7 @@ function InspiredSection() {
           <button
             aria-label="Next"
             onClick={() => scroll("right")}
-            className="absolute right-0 top-1/2 z-10 -translate-y-1/2 rounded-full bg-[hsl(var(--brand-black)/0.6)] p-2 ring-1 ring-white/15 hover:bg-white/10"
+            className="absolute right-0 top-1/2 z-10 -translate-y-1/2 rounded-full bg-gradient-to-b from-[hsl(var(--brand-black)/0.55)] to-[hsl(var(--brand-black)/0.85)] p-2 ring-1 ring-white/15 shadow-[0_8px_18px_rgba(0,0,0,0.45)] transition-all duration-200 will-change-transform hover:-translate-y-0.5 hover:shadow-[0_14px_28px_rgba(0,0,0,0.55)] active:translate-y-[1px] active:shadow-[0_6px_12px_rgba(0,0,0,0.45),inset_0_2px_6px_rgba(0,0,0,0.35)]"
           >
             <svg
               className="h-5 w-5 text-white"
