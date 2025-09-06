@@ -132,14 +132,12 @@ function WondersGrid() {
               {c.title}
             </h3>
             <p className="mt-2 text-sm text-white/90">{c.desc}</p>
-            <span className="mt-4 inline-flex items-center gap-1 rounded-md bg-yellow-400/95 px-2.5 py-1.5 text-xs font-semibold text-black shadow">
+            <span
+              role="button"
+              className={`mt-4 inline-flex items-center gap-2 rounded-xl px-4 py-2 font-extrabold text-black shadow-[0_10px_20px_rgba(0,0,0,0.35)] transition-all duration-200 will-change-transform hover:-translate-y-0.5 hover:shadow-[0_16px_32px_rgba(0,0,0,0.45)] active:translate-y-[1px] active:shadow-[0_6px_14px_rgba(0,0,0,0.35),inset_0_2px_6px_rgba(0,0,0,0.3)] focus:outline-none focus-visible:ring-2 ${i % 2 === 0 ? "focus-visible:ring-yellow-300 bg-gradient-to-r from-[hsl(var(--brand-yellow))] to-[hsl(var(--brand-red))]" : "focus-visible:ring-red-300 bg-gradient-to-l from-[hsl(var(--brand-red))] to-[hsl(var(--brand-yellow))]"}`}
+            >
               Explore
-              <svg
-                className="h-4 w-4"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                aria-hidden
-              >
+              <svg className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
                 <path d="M10.293 3.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 11-1.414-1.414L13.586 11H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 010-1.414z" />
               </svg>
             </span>
