@@ -118,7 +118,7 @@ function WondersGrid() {
         <Link
           key={c.title}
           to={c.to}
-          className="group relative block h-[22rem] overflow-hidden rounded-2xl ring-1 ring-white/10 shadow-xl md:h-[26rem]"
+          className="group relative block h-[22rem] overflow-hidden rounded-2xl ring-1 ring-red-700/40 shadow-[0_0_12px_rgba(213,0,0,0.25)] transition-shadow md:h-[26rem] hover:ring-yellow-400/70 hover:shadow-[0_0_22px_rgba(255,193,7,0.45)]"
           style={{ transitionDelay: `${i * 90}ms` }}
         >
           <img
