@@ -287,6 +287,57 @@ const focusRing = i % 2 === 0 ? "focus-visible:ring-yellow-300" : "focus-visible
   );
 }
 
+function PlanTripSection() {
+  const bg = "https://cdn.builder.io/api/v1/image/assets%2Ff5c230cf530e4e74b728b567e0466b85%2Fbce53432f60243958560f12153e021c4?format=webp&width=1600";
+  const places = [
+    { title: "Zuluk", to: "/places/zuluk" },
+    { title: "Nathula", to: "/places/nathula" },
+    { title: "Gurudongmar Lake", to: "/places/gurudongmar-lake" },
+    { title: "Namchi", to: "/places/namchi" },
+    { title: "Rabdentse Ruins", to: "/places/rabdentse-ruins" },
+    { title: "Tathagatal Tsal", to: "/places/tathagatal-tsal" },
+  ];
+  return (
+    <section
+      className="relative w-full"
+      style={{ backgroundImage: `url(${bg})`, backgroundSize: "cover", backgroundPosition: "center" }}
+    >
+      <div className="absolute inset-0 bg-[hsl(var(--brand-black)/0.55)]" />
+      <div className="relative mx-auto max-w-7xl px-4 py-16 md:py-20">
+        <h2 className="text-center text-3xl font-extrabold tracking-tight text-white md:text-4xl">
+          Plan your trip
+        </h2>
+        <div className="mx-auto mt-3 h-1 w-28 rounded-full bg-gradient-to-r from-[hsl(var(--brand-red))] via-[hsl(var(--brand-yellow))] to-[hsl(var(--brand-red))]" />
+        <div className="mt-8 grid gap-4 md:grid-cols-3">
+          {places.map((p, i) => (
+            <Link
+              key={p.title}
+              to={p.to}
+              className={`group relative overflow-hidden rounded-xl ring-1 ring-white/15 bg-white/10 backdrop-blur p-4 text-white shadow-[0_8px_18px_rgba(0,0,0,0.35)] transition-all duration-200 will-change-transform hover:-translate-y-0.5 hover:shadow-[0_14px_28px_rgba(0,0,0,0.45)] active:translate-y-[1px] active:shadow-[0_6px_12px_rgba(0,0,0,0.35),inset_0_2px_6px_rgba(0,0,0,0.3)]`}
+              style={{ minHeight: "4.5rem" }}
+            >
+              <div className="flex items-center justify-between">
+                <div>
+                  <h3 className="text-base font-extrabold tracking-tight">{p.title}</h3>
+                  <p className="mt-1 text-xs text-white/80">Learn more →</p>
+                </div>
+                <span
+                  className={`inline-flex items-center gap-2 rounded-lg px-3 py-1.5 text-sm font-extrabold text-black ${i % 2 === 0 ? "bg-gradient-to-r from-[hsl(var(--brand-yellow))] to-[hsl(var(--brand-red))]" : "bg-gradient-to-l from-[hsl(var(--brand-red))] to-[hsl(var(--brand-yellow))]"}`}
+                >
+                  Explore
+                  <svg className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
+                    <path d="M10.293 3.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 11-1.414-1.414L13.586 11H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 010-1.414z" />
+                  </svg>
+                </span>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function Index() {
   return (
     <div>
@@ -342,6 +393,9 @@ export default function Index() {
 
       {/* Get Inspired Section */}
       <InspiredSection />
+
+      {/* Plan Trip (new section) */}
+      <PlanTripSection />
 
       {/* Quick Nav */}
       <section className="mx-auto max-w-7xl px-4">
