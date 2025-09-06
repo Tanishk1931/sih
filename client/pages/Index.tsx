@@ -137,7 +137,12 @@ function WondersGrid() {
               className={`mt-4 inline-flex items-center gap-2 rounded-xl px-4 py-2 font-extrabold text-black shadow-[0_10px_20px_rgba(0,0,0,0.35)] transition-all duration-200 will-change-transform hover:-translate-y-0.5 hover:shadow-[0_16px_32px_rgba(0,0,0,0.45)] active:translate-y-[1px] active:shadow-[0_6px_14px_rgba(0,0,0,0.35),inset_0_2px_6px_rgba(0,0,0,0.3)] focus:outline-none focus-visible:ring-2 ${i % 2 === 0 ? "focus-visible:ring-yellow-300 bg-gradient-to-r from-[hsl(var(--brand-yellow))] to-[hsl(var(--brand-red))]" : "focus-visible:ring-red-300 bg-gradient-to-l from-[hsl(var(--brand-red))] to-[hsl(var(--brand-yellow))]"}`}
             >
               Explore
-              <svg className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
+              <svg
+                className="h-4 w-4"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden
+              >
                 <path d="M10.293 3.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 11-1.414-1.414L13.586 11H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 010-1.414z" />
               </svg>
             </span>
@@ -240,15 +245,20 @@ function InspiredSection() {
             {items.map((it, i) => {
               const isActive = activeIndex(i);
               const scaleClass = isActive
-  ? "scale-[1.08]"
-  : hovered !== null || selected !== null
-    ? "scale-[0.95]"
-    : "scale-[0.98]";
-const btnDir = i % 2 === 0 ? "bg-gradient-to-r" : "bg-gradient-to-l";
-const btnGrad = i % 2 === 0
-  ? "from-[hsl(var(--brand-yellow))] to-[hsl(var(--brand-red))]"
-  : "from-[hsl(var(--brand-red))] to-[hsl(var(--brand-yellow))]";
-const focusRing = i % 2 === 0 ? "focus-visible:ring-yellow-300" : "focus-visible:ring-red-300";
+                ? "scale-[1.08]"
+                : hovered !== null || selected !== null
+                  ? "scale-[0.95]"
+                  : "scale-[0.98]";
+              const btnDir =
+                i % 2 === 0 ? "bg-gradient-to-r" : "bg-gradient-to-l";
+              const btnGrad =
+                i % 2 === 0
+                  ? "from-[hsl(var(--brand-yellow))] to-[hsl(var(--brand-red))]"
+                  : "from-[hsl(var(--brand-red))] to-[hsl(var(--brand-yellow))]";
+              const focusRing =
+                i % 2 === 0
+                  ? "focus-visible:ring-yellow-300"
+                  : "focus-visible:ring-red-300";
               return (
                 <Link
                   key={it.title}
@@ -269,9 +279,17 @@ const focusRing = i % 2 === 0 ? "focus-visible:ring-yellow-300" : "focus-visible
                       {it.title}
                     </h3>
                     <p className="mt-1 text-sm text-white/85">{it.desc}</p>
-                    <span role="button" className={`mt-4 inline-flex items-center gap-2 rounded-xl px-4 py-2 font-extrabold text-black ${btnDir} ${btnGrad} shadow-[0_10px_20px_rgba(0,0,0,0.35)] transition-all duration-200 will-change-transform hover:-translate-y-0.5 hover:shadow-[0_16px_32px_rgba(0,0,0,0.45)] active:translate-y-[1px] active:shadow-[0_6px_14px_rgba(0,0,0,0.35),inset_0_2px_6px_rgba(0,0,0,0.3)] focus:outline-none focus-visible:ring-2 ${focusRing}`}>
+                    <span
+                      role="button"
+                      className={`mt-4 inline-flex items-center gap-2 rounded-xl px-4 py-2 font-extrabold text-black ${btnDir} ${btnGrad} shadow-[0_10px_20px_rgba(0,0,0,0.35)] transition-all duration-200 will-change-transform hover:-translate-y-0.5 hover:shadow-[0_16px_32px_rgba(0,0,0,0.45)] active:translate-y-[1px] active:shadow-[0_6px_14px_rgba(0,0,0,0.35),inset_0_2px_6px_rgba(0,0,0,0.3)] focus:outline-none focus-visible:ring-2 ${focusRing}`}
+                    >
                       Explore
-                      <svg className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
+                      <svg
+                        className="h-4 w-4"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                        aria-hidden
+                      >
                         <path d="M10.293 3.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 11-1.414-1.414L13.586 11H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 010-1.414z" />
                       </svg>
                     </span>
@@ -288,7 +306,8 @@ const focusRing = i % 2 === 0 ? "focus-visible:ring-yellow-300" : "focus-visible
 }
 
 function PlanTripSection() {
-  const bg = "https://cdn.builder.io/api/v1/image/assets%2Ff5c230cf530e4e74b728b567e0466b85%2Fbce53432f60243958560f12153e021c4?format=webp&width=1600";
+  const bg =
+    "https://cdn.builder.io/api/v1/image/assets%2Ff5c230cf530e4e74b728b567e0466b85%2Fbce53432f60243958560f12153e021c4?format=webp&width=1600";
   const places = [
     { title: "Zuluk", to: "/places/zuluk" },
     { title: "Nathula", to: "/places/nathula" },
@@ -300,7 +319,11 @@ function PlanTripSection() {
   return (
     <section
       className="relative w-full"
-      style={{ backgroundImage: `url(${bg})`, backgroundSize: "cover", backgroundPosition: "center" }}
+      style={{
+        backgroundImage: `url(${bg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
     >
       <div className="absolute inset-0 bg-[hsl(var(--brand-black)/0.55)]" />
       <div className="relative mx-auto max-w-7xl px-4 py-16 md:py-20">
@@ -318,14 +341,21 @@ function PlanTripSection() {
             >
               <div className="flex items-center justify-between">
                 <div>
-                  <h3 className="text-base font-extrabold tracking-tight">{p.title}</h3>
+                  <h3 className="text-base font-extrabold tracking-tight">
+                    {p.title}
+                  </h3>
                   <p className="mt-1 text-xs text-white/80">Learn more →</p>
                 </div>
                 <span
                   className={`inline-flex items-center gap-2 rounded-lg px-3 py-1.5 text-sm font-extrabold text-black ${i % 2 === 0 ? "bg-gradient-to-r from-[hsl(var(--brand-yellow))] to-[hsl(var(--brand-red))]" : "bg-gradient-to-l from-[hsl(var(--brand-red))] to-[hsl(var(--brand-yellow))]"}`}
                 >
                   Explore
-                  <svg className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
+                  <svg
+                    className="h-4 w-4"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    aria-hidden
+                  >
                     <path d="M10.293 3.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 11-1.414-1.414L13.586 11H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 010-1.414z" />
                   </svg>
                 </span>

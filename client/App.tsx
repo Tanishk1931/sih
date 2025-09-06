@@ -75,10 +75,19 @@ const App = () => (
             <Route path="/inspire/kids" element={<InspireKids />} />
             <Route path="/places/zuluk" element={<Zuluk />} />
             <Route path="/places/nathula" element={<Nathula />} />
-            <Route path="/places/gurudongmar-lake" element={<GurudongmarLake />} />
+            <Route
+              path="/places/gurudongmar-lake"
+              element={<GurudongmarLake />}
+            />
             <Route path="/places/namchi" element={<Namchi />} />
-            <Route path="/places/rabdentse-ruins" element={<RabdentseRuins />} />
-            <Route path="/places/tathagatal-tsal" element={<TathagatalTsal />} />
+            <Route
+              path="/places/rabdentse-ruins"
+              element={<RabdentseRuins />}
+            />
+            <Route
+              path="/places/tathagatal-tsal"
+              element={<TathagatalTsal />}
+            />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
