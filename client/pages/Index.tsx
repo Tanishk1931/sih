@@ -212,7 +212,7 @@ function InspiredSection() {
           <button
             aria-label="Previous"
             onClick={() => scroll("left")}
-            className="absolute left-0 top-1/2 z-10 -translate-y-1/2 rounded-full bg-gradient-to-b from-[hsl(var(--brand-black)/0.55)] to-[hsl(var(--brand-black)/0.85)] p-2 ring-1 ring-white/15 shadow-[0_8px_18px_rgba(0,0,0,0.45)] transition-all duration-200 will-change-transform hover:-translate-y-0.5 hover:shadow-[0_14px_28px_rgba(0,0,0,0.55)] active:translate-y-[1px] active:shadow-[0_6px_12px_rgba(0,0,0,0.45),inset_0_2px_6px_rgba(0,0,0,0.35)]"
+            className="absolute left-0 top-1/2 z-10 -translate-y-1/2 rounded-full p-2 ring-1 ring-yellow-300/40 bg-gradient-to-br from-[hsl(var(--brand-yellow)/0.35)] via-[hsl(var(--brand-black)/0.6)] to-[hsl(var(--brand-black)/0.9)] shadow-[0_8px_18px_rgba(0,0,0,0.45)] transition-all duration-200 will-change-transform hover:-translate-y-0.5 hover:shadow-[0_14px_28px_rgba(0,0,0,0.55)] hover:ring-yellow-300/60 active:translate-y-[1px] active:shadow-[0_6px_12px_rgba(0,0,0,0.45),inset_0_2px_6px_rgba(0,0,0,0.35)]"
           >
             <svg
               className="h-5 w-5 text-white"
@@ -225,7 +225,7 @@ function InspiredSection() {
           <button
             aria-label="Next"
             onClick={() => scroll("right")}
-            className="absolute right-0 top-1/2 z-10 -translate-y-1/2 rounded-full bg-gradient-to-b from-[hsl(var(--brand-black)/0.55)] to-[hsl(var(--brand-black)/0.85)] p-2 ring-1 ring-white/15 shadow-[0_8px_18px_rgba(0,0,0,0.45)] transition-all duration-200 will-change-transform hover:-translate-y-0.5 hover:shadow-[0_14px_28px_rgba(0,0,0,0.55)] active:translate-y-[1px] active:shadow-[0_6px_12px_rgba(0,0,0,0.45),inset_0_2px_6px_rgba(0,0,0,0.35)]"
+            className="absolute right-0 top-1/2 z-10 -translate-y-1/2 rounded-full p-2 ring-1 ring-red-400/40 bg-gradient-to-bl from-[hsl(var(--brand-red)/0.45)] via-[hsl(var(--brand-black)/0.6)] to-[hsl(var(--brand-black)/0.9)] shadow-[0_8px_18px_rgba(0,0,0,0.45)] transition-all duration-200 will-change-transform hover:-translate-y-0.5 hover:shadow-[0_14px_28px_rgba(0,0,0,0.55)] hover:ring-red-400/60 active:translate-y-[1px] active:shadow-[0_6px_12px_rgba(0,0,0,0.45),inset_0_2px_6px_rgba(0,0,0,0.35)]"
           >
             <svg
               className="h-5 w-5 text-white"
@@ -242,10 +242,15 @@ function InspiredSection() {
             {items.map((it, i) => {
               const isActive = activeIndex(i);
               const scaleClass = isActive
-                ? "scale-[1.08]"
-                : hovered !== null || selected !== null
-                  ? "scale-[0.95]"
-                  : "scale-[0.98]";
+  ? "scale-[1.08]"
+  : hovered !== null || selected !== null
+    ? "scale-[0.95]"
+    : "scale-[0.98]";
+const btnDir = i % 2 === 0 ? "bg-gradient-to-r" : "bg-gradient-to-l";
+const btnGrad = i % 2 === 0
+  ? "from-[hsl(var(--brand-yellow))] to-[hsl(var(--brand-red))]"
+  : "from-[hsl(var(--brand-red))] to-[hsl(var(--brand-yellow))]";
+const focusRing = i % 2 === 0 ? "focus-visible:ring-yellow-300" : "focus-visible:ring-red-300";
               return (
                 <Link
                   key={it.title}
@@ -266,8 +271,11 @@ function InspiredSection() {
                       {it.title}
                     </h3>
                     <p className="mt-1 text-sm text-white/85">{it.desc}</p>
-                    <span role="button" className="mt-4 inline-flex items-center justify-center rounded-xl px-4 py-2 font-extrabold text-black bg-gradient-to-b from-yellow-400 to-amber-300 shadow-[0_10px_20px_rgba(0,0,0,0.35)] transition-all duration-200 will-change-transform hover:-translate-y-0.5 hover:shadow-[0_16px_32px_rgba(0,0,0,0.45)] active:translate-y-[1px] active:shadow-[0_6px_14px_rgba(0,0,0,0.35),inset_0_2px_6px_rgba(0,0,0,0.3)] focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-300">
+                    <span role="button" className={`mt-4 inline-flex items-center gap-2 rounded-xl px-4 py-2 font-extrabold text-black ${btnDir} ${btnGrad} shadow-[0_10px_20px_rgba(0,0,0,0.35)] transition-all duration-200 will-change-transform hover:-translate-y-0.5 hover:shadow-[0_16px_32px_rgba(0,0,0,0.45)] active:translate-y-[1px] active:shadow-[0_6px_14px_rgba(0,0,0,0.35),inset_0_2px_6px_rgba(0,0,0,0.3)] focus:outline-none focus-visible:ring-2 ${focusRing}`}>
                       Explore
+                      <svg className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
+                        <path d="M10.293 3.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 11-1.414-1.414L13.586 11H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 010-1.414z" />
+                      </svg>
                     </span>
                   </div>
                   <div className="pointer-events-none absolute inset-0 ring-2 ring-inset ring-red-600/40 drop-shadow-[0_0_22px_rgba(213,0,0,0.6)] group-hover:ring-yellow-400/70 group-hover:drop-shadow-[0_0_28px_rgba(255,193,7,0.65),0_0_14px_rgba(213,0,0,0.5)]" />
