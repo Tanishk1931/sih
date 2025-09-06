@@ -118,7 +118,7 @@ function WondersGrid() {
         <Link
           key={c.title}
           to={c.to}
-          className="group relative block h-[22rem] overflow-hidden rounded-2xl ring-2 ring-red-700/50 shadow-[0_0_12px_rgba(213,0,0,0.28)] transition-all transform md:h-[26rem] hover:scale-[1.03] hover:ring-yellow-400/80 hover:shadow-[0_0_26px_rgba(255,193,7,0.55)]"
+          className="group relative block h-[22rem] overflow-hidden rounded-2xl ring-2 ring-red-700/50 shadow-[0_0_20px_rgba(213,0,0,0.45)] transition-all transform md:h-[26rem] hover:scale-[1.03] hover:ring-yellow-400/80 hover:shadow-[0_0_30px_rgba(255,193,7,0.6)]"
           style={{ transitionDelay: `${i * 90}ms` }}
         >
           <img
@@ -144,7 +144,7 @@ function WondersGrid() {
               </svg>
             </span>
           </div>
-          <div className="pointer-events-none absolute inset-0 ring-2 ring-inset ring-red-600/40 drop-shadow-[0_0_10px_rgba(213,0,0,0.35)] group-hover:ring-yellow-400/60 group-hover:drop-shadow-[0_0_18px_rgba(255,193,7,0.55)]" />
+          <div className="pointer-events-none absolute inset-0 ring-2 ring-inset ring-red-600/40 drop-shadow-[0_0_22px_rgba(213,0,0,0.6)] group-hover:ring-yellow-400/70 group-hover:drop-shadow-[0_0_28px_rgba(255,193,7,0.65)]" />
         </Link>
       ))}
     </div>
@@ -253,12 +253,12 @@ function InspiredSection() {
                   onMouseEnter={() => setHovered(i)}
                   onMouseLeave={() => setHovered(null)}
                   onClick={() => setSelected(i)}
-                  className={`group relative h-[26rem] w-[90%] min-w-[90%] snap-center overflow-hidden rounded-2xl ring-2 ring-red-700/50 shadow-[0_0_16px_rgba(213,0,0,0.32)] transition-all duration-500 ease-out hover:ring-yellow-400/80 hover:shadow-[0_0_30px_rgba(255,193,7,0.6)] sm:w-[72%] sm:min-w-[72%] md:h-[30rem] md:w-[54%] md:min-w-[54%] lg:h-[36rem] lg:w-[44%] lg:min-w-[44%] ${scaleClass}`}
+                  className={`group relative h-[26rem] w-[90%] min-w-[90%] snap-center overflow-hidden rounded-2xl ring-2 ring-red-700/50 shadow-[0_0_28px_rgba(213,0,0,0.5)] transition-all duration-500 ease-out hover:ring-yellow-400/80 hover:shadow-[0_0_34px_rgba(255,193,7,0.65)] sm:w-[72%] sm:min-w-[72%] md:h-[30rem] md:w-[54%] md:min-w-[54%] lg:h-[36rem] lg:w-[44%] lg:min-w-[44%] ${scaleClass}`}
                 >
                   <img
                     src={it.img}
                     alt={it.title}
-                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.06]"
+                    className="absolute inset-0 h-full w-full object-cover transition-opacity duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--brand-black))] via-[hsl(var(--brand-black))/0.35] to-transparent" />
                   <div className="absolute inset-x-0 bottom-0 p-5">
@@ -267,7 +267,7 @@ function InspiredSection() {
                     </h3>
                     <p className="mt-1 text-sm text-white/85">{it.desc}</p>
                   </div>
-                  <div className="pointer-events-none absolute inset-0 ring-2 ring-inset ring-red-600/40 drop-shadow-[0_0_10px_rgba(213,0,0,0.35)] group-hover:ring-yellow-400/60 group-hover:drop-shadow-[0_0_18px_rgba(255,193,7,0.55)]" />
+                  <div className="pointer-events-none absolute inset-0 ring-2 ring-inset ring-red-600/40 drop-shadow-[0_0_22px_rgba(213,0,0,0.6)] group-hover:ring-yellow-400/70 group-hover:drop-shadow-[0_0_28px_rgba(255,193,7,0.65)]" />
                 </Link>
               );
             })}
