@@ -319,7 +319,23 @@ export default function Index() {
 
         {/* Hero Content */}
         <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center text-white">
-          <div className="mt-6 flex gap-4" />
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
+          <Link
+            to="/experiences"
+            className="relative inline-flex items-center justify-center rounded-xl px-6 py-3 font-extrabold text-black bg-gradient-to-b from-yellow-400 to-amber-300 shadow-[0_10px_20px_rgba(0,0,0,0.35)] transition-all duration-200 will-change-transform hover:-translate-y-0.5 hover:shadow-[0_16px_32px_rgba(0,0,0,0.45)] active:translate-y-[1px] active:shadow-[0_6px_14px_rgba(0,0,0,0.35),inset_0_2px_6px_rgba(0,0,0,0.3)] focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-300">
+            Explore Experiences
+          </Link>
+          <Link
+            to="/calendar"
+            className="relative inline-flex items-center justify-center rounded-xl px-6 py-3 font-extrabold text-white bg-gradient-to-b from-red-500 to-rose-600 shadow-[0_10px_20px_rgba(0,0,0,0.35)] transition-all duration-200 will-change-transform hover:-translate-y-0.5 hover:shadow-[0_16px_32px_rgba(0,0,0,0.45)] active:translate-y-[1px] active:shadow-[0_6px_14px_rgba(0,0,0,0.35),inset_0_2px_6px_rgba(0,0,0,0.3)] focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300">
+            Festival Calendar
+          </Link>
+          <Link
+            to="/virtual-tours"
+            className="relative inline-flex items-center justify-center rounded-xl px-6 py-3 font-extrabold text-black bg-gradient-to-b from-white to-neutral-200 shadow-[0_10px_20px_rgba(0,0,0,0.35)] transition-all duration-200 will-change-transform hover:-translate-y-0.5 hover:shadow-[0_16px_32px_rgba(0,0,0,0.45)] active:translate-y-[1px] active:shadow-[0_6px_14px_rgba(0,0,0,0.35),inset_0_2px_6px_rgba(0,0,0,0.3)] focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60">
+            Virtual Tours
+          </Link>
+        </div>
         </div>
       </section>
 
