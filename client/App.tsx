@@ -26,6 +26,12 @@ import Gangtok from "./pages/Gangtok";
 import Heritage from "./pages/Heritage";
 import Lachung from "./pages/Lachung";
 import ThanguValley from "./pages/ThanguValley";
+import Zuluk from "./pages/places/Zuluk";
+import Nathula from "./pages/places/Nathula";
+import GurudongmarLake from "./pages/places/GurudongmarLake";
+import Namchi from "./pages/places/Namchi";
+import RabdentseRuins from "./pages/places/RabdentseRuins";
+import TathagatalTsal from "./pages/places/TathagatalTsal";
 import NotFound from "./pages/NotFound";
 import InspireHistory from "./pages/inspired/History";
 import InspireViews from "./pages/inspired/Views";
@@ -67,6 +73,12 @@ const App = () => (
             <Route path="/inspire/resorts" element={<InspireResorts />} />
             <Route path="/inspire/free" element={<InspireFree />} />
             <Route path="/inspire/kids" element={<InspireKids />} />
+            <Route path="/places/zuluk" element={<Zuluk />} />
+            <Route path="/places/nathula" element={<Nathula />} />
+            <Route path="/places/gurudongmar-lake" element={<GurudongmarLake />} />
+            <Route path="/places/namchi" element={<Namchi />} />
+            <Route path="/places/rabdentse-ruins" element={<RabdentseRuins />} />
+            <Route path="/places/tathagatal-tsal" element={<TathagatalTsal />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
