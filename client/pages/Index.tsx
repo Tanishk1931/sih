@@ -237,7 +237,7 @@ function InspiredSection() {
           </button>
           <div
             ref={scroller}
-            className="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pr-8 pl-8 md:pl-12 md:pr-12"
+            className="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pr-8 pl-8 md:pl-12 md:pr-12 no-scrollbar"
           >
             {items.map((it, i) => {
               const isActive = activeIndex(i);
