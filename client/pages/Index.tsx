@@ -253,7 +253,7 @@ function InspiredSection() {
                   onMouseEnter={() => setHovered(i)}
                   onMouseLeave={() => setHovered(null)}
                   onClick={() => setSelected(i)}
-                  className={`group relative h-[26rem] w-[90%] min-w-[90%] snap-center overflow-hidden rounded-2xl ring-1 ring-white/10 shadow-2xl transition-all duration-500 ease-out sm:w-[72%] sm:min-w-[72%] md:h-[30rem] md:w-[54%] md:min-w-[54%] lg:h-[36rem] lg:w-[44%] lg:min-w-[44%] ${scaleClass}`}
+                  className={`group relative h-[26rem] w-[90%] min-w-[90%] snap-center overflow-hidden rounded-2xl ring-1 ring-red-700/40 shadow-[0_0_14px_rgba(213,0,0,0.28)] transition-all duration-500 ease-out hover:ring-yellow-400/70 hover:shadow-[0_0_26px_rgba(255,193,7,0.5)] sm:w-[72%] sm:min-w-[72%] md:h-[30rem] md:w-[54%] md:min-w-[54%] lg:h-[36rem] lg:w-[44%] lg:min-w-[44%] ${scaleClass}`}
                 >
                   <img
                     src={it.img}
