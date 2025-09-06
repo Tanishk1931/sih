@@ -266,6 +266,9 @@ function InspiredSection() {
                       {it.title}
                     </h3>
                     <p className="mt-1 text-sm text-white/85">{it.desc}</p>
+                    <span role="button" className="mt-4 inline-flex items-center justify-center rounded-xl px-4 py-2 font-extrabold text-black bg-gradient-to-b from-yellow-400 to-amber-300 shadow-[0_10px_20px_rgba(0,0,0,0.35)] transition-all duration-200 will-change-transform hover:-translate-y-0.5 hover:shadow-[0_16px_32px_rgba(0,0,0,0.45)] active:translate-y-[1px] active:shadow-[0_6px_14px_rgba(0,0,0,0.35),inset_0_2px_6px_rgba(0,0,0,0.3)] focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-300">
+                      Explore
+                    </span>
                   </div>
                   <div className="pointer-events-none absolute inset-0 ring-2 ring-inset ring-red-600/40 drop-shadow-[0_0_22px_rgba(213,0,0,0.6)] group-hover:ring-yellow-400/70 group-hover:drop-shadow-[0_0_28px_rgba(255,193,7,0.65),0_0_14px_rgba(213,0,0,0.5)]" />
                 </Link>
@@ -319,23 +322,7 @@ export default function Index() {
 
         {/* Hero Content */}
         <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center text-white">
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
-          <Link
-            to="/experiences"
-            className="relative inline-flex items-center justify-center rounded-xl px-6 py-3 font-extrabold text-black bg-gradient-to-b from-yellow-400 to-amber-300 shadow-[0_10px_20px_rgba(0,0,0,0.35)] transition-all duration-200 will-change-transform hover:-translate-y-0.5 hover:shadow-[0_16px_32px_rgba(0,0,0,0.45)] active:translate-y-[1px] active:shadow-[0_6px_14px_rgba(0,0,0,0.35),inset_0_2px_6px_rgba(0,0,0,0.3)] focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-300">
-            Explore Experiences
-          </Link>
-          <Link
-            to="/calendar"
-            className="relative inline-flex items-center justify-center rounded-xl px-6 py-3 font-extrabold text-white bg-gradient-to-b from-red-500 to-rose-600 shadow-[0_10px_20px_rgba(0,0,0,0.35)] transition-all duration-200 will-change-transform hover:-translate-y-0.5 hover:shadow-[0_16px_32px_rgba(0,0,0,0.45)] active:translate-y-[1px] active:shadow-[0_6px_14px_rgba(0,0,0,0.35),inset_0_2px_6px_rgba(0,0,0,0.3)] focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300">
-            Festival Calendar
-          </Link>
-          <Link
-            to="/virtual-tours"
-            className="relative inline-flex items-center justify-center rounded-xl px-6 py-3 font-extrabold text-black bg-gradient-to-b from-white to-neutral-200 shadow-[0_10px_20px_rgba(0,0,0,0.35)] transition-all duration-200 will-change-transform hover:-translate-y-0.5 hover:shadow-[0_16px_32px_rgba(0,0,0,0.45)] active:translate-y-[1px] active:shadow-[0_6px_14px_rgba(0,0,0,0.35),inset_0_2px_6px_rgba(0,0,0,0.3)] focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60">
-            Virtual Tours
-          </Link>
-        </div>
+          <div className="mt-6 flex gap-4" />
         </div>
       </section>
 
